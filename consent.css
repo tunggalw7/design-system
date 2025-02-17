@@ -1,0 +1,1237 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.font-mincho {
+  font-family: "dnp-shuei-mincho-pr6", serif;
+}
+
+.font-gothic {
+  font-family: "dnp-shuei-gothic-kin-std", sans-serif;
+}
+
+/* Body */
+body {
+  font-family: "dnp-shuei-gothic-kin-std", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  color: #0a0a23;
+}
+
+/* Header */
+.header {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  z-index: 10;
+}
+
+.header svg {
+  width: 112px;
+  height: 46px;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 16px 80px;
+  padding-bottom: 10%;
+  max-width: 800px;
+}
+
+/* Form Container */
+.form-container {
+  text-align: left;
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  padding: 0;
+}
+
+.error-message::after {
+  content: "。";
+}
+
+label[for="root_phone_number"] .custom-label-title {
+  gap: 0;
+  display: flex;
+}
+
+/* Titles */
+h1 {
+  font-size: 1.5em;
+  color: #000040;
+  margin: 20px 0;
+  font-family: "dnp-shuei-mincho-pr6", serif;
+}
+
+h2 {
+  color: #000000;
+  margin: 20px 0 32px;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  font-family: "dnp-shuei-mincho-pr6", serif;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* ============================== Form Inputs ============================== */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-select-box {
+  display: grid;
+  position: relative;
+}
+
+.custom-select-box {
+  display: grid;
+}
+
+.custom-select-box label {
+  margin-bottom: 8px;
+}
+
+.custom-select-box .custom-label-title {
+  position: absolute;
+  z-index: 1;
+  left: 10px;
+  top: 0;
+  transform: translateY(-50%);
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.react-select__control:focus,
+.react-select__control--is-focused {
+  outline: none;
+  /* Hapus outline */
+  box-shadow: none;
+  /* Hapus bayangan fokus */
+  border-color: transparent;
+  /* Opsional: Hapus border */
+}
+
+div[class*="control"],
+div[class*="control"]:hover {
+  box-shadow: none !important;
+  border: 1px solid #c2c2c2;
+}
+
+.select__control {
+  height: 55px;
+  background-color: #ffffff;
+  border: 1px solid #c2c2c2;
+}
+
+.error .select__control {
+  border-color: #cc1c3c;
+}
+
+.select__placeholder,
+.select__input-container {
+  color: #000000;
+}
+
+.select__indicator-separator {
+  display: none;
+}
+
+.select__indicator svg {
+  fill: black;
+  width: 26px;
+  height: 26px;
+}
+
+select {
+  appearance: none;
+  background: #fff url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path fill="black" d="M0 0l5 5 5-5z"/></svg>') no-repeat right 10px center;
+  background-size: 10px;
+}
+
+select:focus {
+  outline: 2px solid #0a0a23;
+}
+
+#field-root_first_name label:first-child {
+  height: 32px;
+  display: block;
+}
+
+#field-root_last_name .custom-input-box {
+  display: grid;
+  gap: 8px;
+}
+
+.required {
+  display: none;
+}
+
+.loading .action-area .custom-submit-btn,
+.loading .action-area .custom-cancel-btn {
+  pointer-events: none;
+  opacity: 0.6;
+  position: relative;
+}
+
+.loading .action-area .custom-submit-btn::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  position: absolute;
+  top: 20px;
+}
+
+.loading-container {
+  display: none;
+}
+
+#customized-ui-wrapper.loading .main-content {
+  display: none;
+}
+
+#customized-ui-wrapper.preview-state.loading .main-content {
+  display: block;
+}
+
+#customized-ui-wrapper.loading .loading-container {
+  display: block;
+}
+
+#customized-ui-wrapper.preview-state.loading .loading-container {
+  display: none;
+}
+
+/** -------------------------- loading animation -------------------------- */
+.loading-container {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading-container .loading-text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: max-content;
+  white-space: pre;
+  font-weight: normal;
+}
+
+.loading-container .loader {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading-container .loader .hex0,
+.loading-container .loader .hex120,
+.loading-container .loader .hex240 {
+  border-right: none;
+}
+
+.loading-container .spinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  animation: rotation0 6s infinite linear, resize3 6s infinite linear;
+}
+
+.loading-container .container-hex {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.loading-container .hex0,
+.loading-container .hex120,
+.loading-container .hex240 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 57.74%;
+  left: 0;
+  top: 21.13%;
+  border-left: 2px solid #214999;
+  border-right: 2px solid #214999;
+}
+
+.loading-container .hex0 {
+  animation: rotation0 4s infinite linear;
+}
+
+.loading-container .hex120 {
+  transform: rotate(120deg);
+  animation: rotation120 4s infinite linear;
+}
+
+.loading-container .hex240 {
+  transform: rotate(240deg);
+  animation: rotation240 4s infinite linear;
+}
+
+/** ------------------------------- keyframes ------------------------------- */
+
+@keyframes rotation0 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation120 {
+  0% {
+    transform: rotate(120deg);
+  }
+
+  100% {
+    transform: rotate(480deg);
+  }
+}
+
+@keyframes rotation240 {
+  0% {
+    transform: rotate(240deg);
+  }
+
+  100% {
+    transform: rotate(600deg);
+  }
+}
+
+@keyframes resize3 {
+
+  0%,
+  16.66%,
+  33.33%,
+  50%,
+  66.66%,
+  83.33%,
+  100% {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  2.77%,
+  19.44%,
+  36.11%,
+  52.77%,
+  69.44%,
+  86.11% {
+    width: 93.5%;
+    height: 93.5%;
+    top: 3.25%;
+    left: 3.25%;
+  }
+
+  5.55%,
+  22.22%,
+  38.88%,
+  55.55%,
+  72.22%,
+  88.88% {
+    width: 84.4%;
+    height: 84.4%;
+    top: 7.8%;
+    left: 7.8%;
+  }
+
+  8.33%,
+  25%,
+  41.66%,
+  58.33%,
+  75%,
+  91.66% {
+    width: 73.2%;
+    height: 73.2%;
+    top: 13.4%;
+    left: 13.4%;
+  }
+
+  11.11%,
+  27.77%,
+  44.44%,
+  61.11%,
+  77.77%,
+  94.44% {
+    width: 84.4%;
+    height: 84.4%;
+    top: 7.8%;
+    left: 7.8%;
+  }
+
+  13.88%,
+  30.55%,
+  47.22%,
+  63.88%,
+  80.55%,
+  97.22% {
+    width: 93.5%;
+    height: 93.5%;
+    top: 3.25%;
+    left: 3.25%;
+  }
+}
+
+/* Floating Labels */
+.custom-input-area {
+  position: relative;
+  width: 100%;
+}
+
+.custom-input-area input {
+  padding: 21px 12px;
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-input-area label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #000000;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+#field-root_last_name .custom-input-box {
+  gap: 0px;
+}
+
+.custom-input-box label:first-child {
+  height: 32px;
+}
+
+.custom-email-box .custom-input-area label {
+  top: 20px;
+  font-size: 12px;
+  color: #000000;
+}
+
+.custom-email-box .custom-input-area input {
+  padding: 28px 12px 14px;
+}
+
+.custom-input-area input:focus {
+  border-bottom: solid #000040;
+  outline: none;
+  padding: 26px 12px 14px;
+  border-bottom-color: #000040 !important;
+  border-top-color: #c2c2c2 !important;
+  border-left-color: #c2c2c2 !important;
+  border-right-color: #c2c2c2 !important;
+}
+
+.custom-input-area input:disabled,
+.preview .custom-email-box .custom-input-area input:disabled {
+  background-color: #ffffff;
+  box-shadow: none !important;
+  color: #000000;
+}
+
+.custom-email-box .custom-input-area input:disabled {
+  background-color: #eeeeee;
+  box-shadow: none !important;
+  color: #9b9b9b;
+}
+
+.custom-input-area input:not(:placeholder-shown) {
+  padding: 28px 12px 14px;
+}
+
+.custom-input-area input:focus+label,
+.custom-input-area input:not(:placeholder-shown)+label {
+  top: 20px;
+  font-size: 12px;
+  color: #000000;
+}
+
+.custom-input-area input:-webkit-autofill+label,
+.custom-input-area input:-webkit-autofill:focus+label {
+  top: 20px;
+  font-size: 12px;
+  color: #000000;
+}
+
+.custom-input-area input:-webkit-autofill,
+.custom-input-area input:-webkit-autofill:focus {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+label[for="root_birthdate"].required {
+  display: none;
+}
+
+label[for="birthdate"].custom-label {
+  padding-bottom: 6px;
+  display: flex;
+}
+
+/* Buttons */
+button {
+  background-color: #6e6eb5;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "dnp-shuei-mincho-pr6", serif;
+}
+
+button:hover {
+  background-color: #57579a;
+}
+
+.action-area {
+  display: grid;
+  gap: 32px;
+  justify-content: center;
+}
+
+.action-area button {
+  background-color: #000040;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 16px;
+  width: 300px;
+  height: 57px;
+  font-weight: normal;
+}
+
+.action-area button.preview {
+  opacity: 1;
+}
+
+.action-area button:hover {
+  opacity: 1;
+}
+
+.action-area button.custom-cancel-btn {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #000040;
+}
+
+.auto-fill-button {
+  background-color: #0a0a23;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+  height: 30px;
+  margin-top: -1em;
+}
+
+.auto-fill-button:hover {
+  background-color: #57579a;
+}
+
+.error-message {
+  margin-top: 8px;
+}
+
+/* Footer */
+footer {
+  font-size: 14px;
+  color: white;
+  background-color: #000040;
+  padding: 10px 0;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 67px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* ===================== UI Customization ===================== */
+.custom-group-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+span.custom-required-span {
+  display: none;
+}
+
+.custom-group-container .custom-input-field {
+  flex: 1;
+}
+
+#email:placeholder-shown {
+  background-color: #ffffff;
+  box-shadow: rgb(249, 249, 249) 0px 0px 0px 0px inset !important;
+}
+
+#email:-webkit-autofill {
+  background-color: #ffffff;
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+#field-root_year.form-group,
+#field-root_month.form-group,
+#field-root_date.form-group {
+  margin-bottom: 24px;
+}
+
+#field-root_date.form-group,
+#field-root_gender.form-group,
+div#field-root_building {
+  margin-bottom: 32px;
+}
+
+.form-group .hidden {
+  display: none;
+}
+
+.field-description {
+  display: none;
+}
+
+.error .custom-input-area input {
+  border-color: #cc1c3c;
+}
+
+.zipcode-input .custom-input-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zipcode-input .custom-input-area input {
+  width: 376px;
+}
+
+.zipcode-input .custom-input-area button {
+  width: max-content;
+  background-color: #000040;
+  font-weight: normal;
+  height: 41px;
+  padding: 12px 8px;
+}
+
+/* Gender Options Styling */
+.custom-label-title {
+  margin-bottom: 8px;
+}
+
+.custom-radio-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.preview .custom-radio-options {
+  width: 245px;
+}
+
+.preview .custom-input-area button.custom-sub-input {
+  display: none;
+}
+
+.preview #field-root_last_name .custom-input-box label:first-child {
+  display: none;
+}
+
+.preview #field-root_first_name label:first-child {
+  display: none;
+}
+
+#field-root_service_usage_status_04,
+#field-root_service_usage_status_10 {
+  display: none;
+}
+
+.custom-sub-input {
+  align-items: center;
+  display: flex;
+}
+
+.custom-radio-options .custom-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  flex: 1;
+  cursor: pointer;
+  height: 53px;
+}
+
+input#root_birthdate {
+  height: 55px;
+  font-size: 16px;
+  font-family: "dnp-shuei-gothic-kin-std";
+  font-weight: normal;
+}
+
+.custom-radio-label input[type="radio"] {
+  appearance: none;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Saat radio button dipilih */
+.custom-radio-label input[type="radio"]:checked {
+  border-color: #000040;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4" fill="black"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 150%;
+  /* Ukuran lingkaran tengah */
+}
+
+/* Label inside radio group */
+.custom-radio-label label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  /* Make label clickable */
+}
+
+.custom-radio-text {
+  color: #000000;
+}
+
+.error .custom-radio-label {
+  border-color: #cc1c3c;
+}
+
+/* Container untuk Select dengan Label */
+.select-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Gaya Select */
+.select-container select {
+  width: 100%;
+  padding: 20px 10px 10px;
+  border: 1.5px solid #aaa;
+  border-radius: 4px;
+  background-color: white;
+  appearance: none;
+  font-size: 1em;
+  transition: border-color 0.2s ease;
+}
+
+/* Tambahkan panah dropdown */
+.select-container select:focus {
+  border-color: #0a0a23;
+  outline: none;
+}
+
+/* Gaya Label */
+.select-container label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #aaa;
+  background: white;
+  padding: 0 5px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Saat fokus atau ada nilai */
+.select-container select:focus+label,
+.select-container select:not([value=""]):not(:placeholder-shown)+label {
+  top: 0;
+  font-size: 12px;
+  color: #0a0a23;
+}
+
+/* Gaya panah dropdown */
+.select-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path fill="black" d="M0 0l5 5 5-5z"/></svg>');
+  pointer-events: none;
+}
+
+.select__single-value.select__single-value--is-disabled {
+  color: #000;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.mb-20 {
+  margin-bottom: 1em;
+}
+
+.text-info {
+  margin-bottom: 32px;
+  color: #000000;
+}
+
+.custom-input-box label:first-child {
+  color: #000000;
+}
+
+.custom-input-box label:first-child {
+  color: #000000;
+}
+
+.custom-select-box label {
+  color: #000000;
+}
+
+span.custom-label-text {
+  color: #000000;
+}
+
+span.custom-required-badge {
+  color: #000000;
+}
+
+.action-area button .custom-submit-btn {
+  width: 50%;
+  /* Lebar tombol 50% */
+  margin: 0 auto;
+  /* Memastikan tombol berada di tengah */
+  display: block;
+  /* Menghilangkan pengaruh inline-block */
+  background-color: #6e6eb5;
+  /* Warna default */
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Transisi warna saat hover */
+}
+
+.action-area button .custom-submit-btn:hover {
+  background-color: #0a0a23;
+}
+
+.preview input {
+  pointer-events: none;
+}
+
+.subtext {
+  font-size: 20px;
+  color: #000040;
+}
+
+.required {
+  font-size: 16px;
+  color: #000000;
+  margin: 12px 0 16px;
+}
+
+.breadcrumb {
+  padding: 20px 20px 0;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: white;
+  border: 1px solid #999999;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 8px 0 0;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: #000040;
+  border-color: #000040;
+}
+
+.checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: block;
+}
+
+.checkbox span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.checkbox label {
+  margin: 0;
+  color: #000;
+  line-height: 1.2;
+}
+
+.custom-checkbox-area .required-label,
+.custom-checkbox-area .error-message {
+  display: none;
+}
+
+/* .agreement-description {
+        margin-bottom: 35px;
+      } */
+
+#field-root_phone_number {
+  margin-bottom: 32px;
+}
+
+/* Stepper */
+.progress-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 957px;
+  margin: 0 auto;
+  /* Ensures the steps are spaced properly and aligned */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #bfbfbf;
+  position: relative;
+  width: 130px;
+  /* Ensures each step takes equal space */
+}
+
+.stepper-wrapper {
+  padding: 60px 0 28px;
+}
+
+.step-number {
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #c2c2c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  background-color: #e8e8e8;
+  color: #494949;
+  margin-top: 0px;
+  position: relative;
+  /* Keeps the styling for step numbers */
+}
+
+.step.landing .step-number {
+  background-color: white;
+  color: #000040;
+  border-color: #000040;
+  font-weight: normal;
+}
+
+.step.checked .step-number::after {
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  background-color: #000040;
+  content: "✔";
+  /* Places the checkmark inside the step number circle */
+}
+
+.step-number[style*="background-image"]::after {
+  content: "" !important;
+}
+
+.step-number[style*="background-image"] {
+  color: transparent !important;
+  border: 0 !important;
+  content: "";
+}
+
+.step-text {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.step.checked .step-text,
+.step.landing .step-text {
+  color: #000040;
+  /* Sets color for the text in the checked or landing step */
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  border: none;
+  background-color: #e8e8e8;
+  margin-top: -25px;
+  margin-right: -5%;
+  margin-left: -5%;
+  width: 191px;
+  /* Adjusts the width and appearance of the connecting line */
+}
+
+.step.checked+.line {
+  background-color: #000040;
+  /* Changes the color of the line when the step is checked */
+}
+
+/* Aligns step 3 to the right for the last step */
+.step:nth-child(3) {
+  margin-left: auto;
+  /* Moves the third step to the far right */
+}
+
+.mobile-step {
+  display: none;
+}
+
+.custom-input-box>.custom-label-title:first-of-type,
+.custom-select-box>.custom-label-title:first-of-type,
+.custom-email-box>.custom-label-title:first-of-type {
+  display: none;
+}
+
+#field-root_zipcode .custom-input-box {
+  display: grid;
+  gap: 8px;
+}
+
+#field-root_zipcode {
+  margin-bottom: 33px;
+}
+
+#field-root_prefecture_name .custom-select-box>.custom-label-title:first-of-type {
+  display: block;
+}
+
+/* ============================== Media Screen ============================== */
+
+@media screen and (max-width: 768px) {
+  .action-area {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+
+  .breadcrumb {
+    padding: 20px 20px 0;
+  }
+
+  .form-container {
+    padding: 0;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .header svg {
+    width: 79px;
+    height: 33px;
+  }
+
+  .text-title {
+    display: none;
+  }
+
+  .zipcode-input .custom-input-area input {
+    width: 60%;
+  }
+
+  .custom-sub-input {
+    font-size: 12px;
+  }
+
+  .custom-select-box label {
+    margin-bottom: 7px;
+  }
+
+  .progress-steps {
+    display: none;
+    /* Sembunyikan stepper desktop */
+  }
+
+  .stepper-wrapper {
+    padding: 20px 0 0;
+  }
+
+  span.step-title {
+    font-size: 24px;
+    color: #000000;
+    font-weight: normal;
+  }
+
+  .mobile-step {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .mobile-step .title {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .mobile-step .circle {
+    width: 80px;
+    /* Ukuran lingkaran luar lebih besar */
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(#000040 calc(1 / 3 * 360deg),
+        /* Warna aktif sesuai posisi */
+        #e5e5e5 calc(1 / 3 * 360deg)
+        /* Warna tidak aktif */
+      );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .mobile-step .circle .inner {
+    width: 88%;
+    /* Lebar inner ring diperbesar */
+    height: 88%;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    /* Ukuran font lebih besar */
+    font-weight: bold;
+    color: #000040;
+  }
+
+  .mobile-step .title .text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000040;
+    text-align: left;
+  }
+
+  .mobile-step .step-label {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  .subtext {
+    display: none;
+  }
+
+  .container {
+    padding: 0 16px 16px;
+  }
+
+  .text-info {
+    line-height: 1.84;
+    margin-bottom: 32px;
+  }
+
+  .required {
+    margin: 0 0 16px;
+  }
+}
